@@ -90,7 +90,7 @@ class Menu {
         for (let i =0; i < this.packingLists.length; i++){
             listString += i +': ' + this.packingLists[i].name + '\n'; // this adds all the lists into another list and numbers
         }                                                              // them by the index into the listSting variable
-        alert(listString); // this shows the new listSting variable to the user.
+        return listString;
     }
 
     viewAllLists(){ // this allows the user to view all of the previously created lists 
@@ -107,7 +107,7 @@ class Menu {
     }
 
     viewList(){// i cant seem to get the list of packing lists to show up on the selection screen 
-        let id = prompt('Select the id of the desired list:' + this.showListSelectionOptions());
+        let id = prompt('Select the id of the desired list:' + '\n' + this.showListSelectionOptions());
         if (id > -1 && id < this.packingLists.length){ // this validates the input of the user and helps prevent crashing or errors.
             this.selectedList = this.packingLists[id]; // changes selectedList from null to the input the user chose.
             let identifier = 'List: ' + this.selectedList.name + '\n';
